@@ -15,7 +15,7 @@ const manifest = "Godeps.json"
 // Dependency is the type for a single dependency in the Godeps.json file.
 type Dependency struct {
 	ImportPath string
-	Comment    string
+	Comment    string `json:",omitempty"`
 	Rev        string
 }
 
@@ -23,7 +23,7 @@ type Dependency struct {
 type Godeps struct {
 	ImportPath string
 	GoVersion  string
-	Packages   []string
+	Packages   []string `json:",omitempty"`
 	Deps       []Dependency
 }
 
